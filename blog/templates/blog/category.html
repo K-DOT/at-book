@@ -1,0 +1,8 @@
+{% extends "blog/base.html" %} // главный шаблон
+{% block title %}Статьи в категории - {{ category.name }}{% endblock title %} 
+{% block content %}
+    <h2>Статьи в категории - {{ category.name }}:</h2>
+    	{% for post in posts %} 
+        	<p><a href="/blog/{{ post.id }}">{{ post.title }}</a></p>
+    	{% endfor %}
+{% endblock content %}

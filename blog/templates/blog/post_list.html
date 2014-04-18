@@ -1,0 +1,29 @@
+{% extends 'blog/base.html' %}
+{% block name %}<h1>блог</h1>{% endblock %}
+{% block content %}
+    {% autoescape off %}
+            {% for post in object_list %}
+                    <div class="article">
+                    {% if post.image %}
+                        <img src="{{MEDIA_URL}}{{ post.image }}" class="blog">
+                    {% endif %}
+                    <div class="text">
+                        <h2><a href="{{ post.get_absolute_url }}">{{ post.title }}</a></h2>
+                        <p class="cat">категория: <a href="category/{{ post.category_id}}">{{ post.category }}</a></p>
+                    </div>
+                        {{post.content |truncatechars:600}}
+                    <div class="spacer"></div>
+                        <div class="blog_elements">
+                           {{ post.datetime }} &ensp; | &ensp;
+                            <a href="{{ post.get_absolute_url }}">подробнее </a>&ensp; |&ensp;
+                            <a href="#">10 комментариев </a>
+
+                        </div>
+                        <hr>
+                     </div>
+        {% empty %}
+    <p>Нет постов</p>
+         {% endfor %}
+    {% endautoescape off %}
+{% endblock %}
+

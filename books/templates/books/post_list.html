@@ -1,0 +1,28 @@
+{% extends 'blog/base.html' %}
+{% block name %}<h1>книги</h1>{% endblock %}
+{% block content %}
+    {% autoescape off %}
+            {% for post in object_list %}
+                    <div class="article">
+                    {% if post.image %}
+                        <img src="{{MEDIA_URL}}{{ post.image }}" class="book">
+                    {% endif %}
+                    <div class="text">
+                        <h2><a href="{{ post.get_absolute_url }}">{{ post.title }}</a></h2>
+                    </div>
+                        {{post.content |truncatechars:600}}
+                    <div class="spacer"></div>
+                        <div class="blog_elements">
+                           {{ post.datetime }} &ensp; | &ensp;
+                            <a href="{{ post.get_absolute_url }}">подробнее </a>&ensp; |&ensp;
+                            <a href="{{ post.get_absolute_url }}#disqus_thread">Comments </a>
+
+                        </div>
+                        <hr>
+                     </div>
+        {% empty %}
+    <p>Нет постов</p>
+         {% endfor %}
+    {% endautoescape off %}
+{% endblock %}
+
