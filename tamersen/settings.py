@@ -41,6 +41,7 @@ INSTALLED_APPS = (
     'books',
     'tinymce',
     'south',
+    "flatblocks",
 )
 
 MIDDLEWARE_CLASSES = (

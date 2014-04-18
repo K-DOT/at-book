@@ -12,4 +12,5 @@ urlpatterns = patterns('',
     url(r'^$', 'blog.views.index'),
     url(r'^media/(?P<path>.*)$','django.views.static.serve',
         {'document_root':'/home/ruben/projects/env/bin/tamersen/tamersen/media'}),
+    url(r'^how-to-buy/', 'blog.views.htb'),
 )

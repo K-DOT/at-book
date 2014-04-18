@@ -1,14 +1,12 @@
 {% extends 'blog/base.html' %}
 {% load staticfiles %}
 {% autoescape off %}
-{% block name %}<h1>об авторе</h1>{% endblock %}
+{% block name %}<h1>как заказать?</h1>{% endblock %}
     {% block content %}
         <div class ="text">
             <img src="{% static "img/lorem-ipsum-logo.jpg" %}" id="index" alt="logo">
            {% load flatblock_tags %}
-            {% flatblock "about" %}
+            {% flatblock "how-t-b" %}
             </div>
-
-
     {% endblock %}
 {% endautoescape %}

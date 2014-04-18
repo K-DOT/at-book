@@ -3,6 +3,10 @@ from blog.models import Post, Category
 from django.views.generic import ListView, DetailView
 from django.shortcuts import render_to_response, render
 
+def htb(request):
+    return render_to_response('blog/how-t-b.html')
+
+
 def about(request):
     return render_to_response('blog/about.html')
 
