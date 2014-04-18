@@ -122,16 +122,24 @@ section h2 {
 #index{
     width: 233px;
     height: 354px;
-    margin-right: 35px;
-    margin-bottom: 20px;
+    margin-right: 20px;
     float: left;
 }
+
+#index2 {
+    width: 233px;
+    height: 354px;
+    margin-right: 20px;
+    float: left;
+    margin-bottom: 15px;
+}
+
 
 .book {
     width: 220px;
     height: 300px;
     margin-left: 15px;
-    margin-right: 35px;
+    margin-right: 20px;
     margin-bottom: 20px;
     float: left;
 
@@ -141,7 +149,7 @@ section h2 {
     width: 200px;
     height: 200px;
     margin-left: 15px;
-    margin-right: 35px;
+    margin-right: 20px;
     margin-bottom: 20px;
     float: left;
 
@@ -322,4 +330,16 @@ div#contentla p, #contentcat p {
     width: 730px;
     margin:0 auto;
     clear: both;
+}
+
+#blogfull {
+    float: left;
+    max-width: 500px;
+    max-height: 400px;
+    margin-right: 15px;
+    margin-bottom: 15px;
+}
+
+.article p {
+    margin-right: 10px;
 }
