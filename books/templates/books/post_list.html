@@ -10,19 +10,44 @@
                     <div class="text">
                         <h2><a href="{{ post.get_absolute_url }}">{{ post.title }}</a></h2>
                     </div>
-                        {{post.content |truncatechars:600}}
+                        {{post.content |truncatechars:1000}}
                     <div class="spacer"></div>
                         <div class="blog_elements">
                            {{ post.datetime }} &ensp; | &ensp;
                             <a href="{{ post.get_absolute_url }}">подробнее </a>&ensp; |&ensp;
-                            <a href="{{ post.get_absolute_url }}#disqus_thread">Comments </a>
+                            <a href="{{ post.get_absolute_url }}#disqus_thread">комментарии</a>
 
                         </div>
                         <hr>
+                        <hr class="II">
                      </div>
-        {% empty %}
-    <p>Нет постов</p>
-         {% endfor %}
+            {% empty %}
+                <p>Нет постов</p>
+            {% endfor %}
+            {% if  is_paginated %}
+                <div class="gggg">
+                <!--Если есть предыдущая страница - то делаю ссылку "назад"-->
+                {% if  page_obj.has_previous %}
+                  <a href="?page={{ page_obj.previous_page_number }}"><img src="{{STATIC_URL}}img/prev.png" class="arrow"></a>
+                {% else %}
+                    <img src="{{STATIC_URL}}img/prev.png" class="arrow">
+                {% endif %}
+                <!--Выводим текущую страницу из всех возможных-->
+                {% for i in page_obj.paginator.page_range %}
+                {% if i == page_obj.number %}
+                    <em class="current">{{ i }}</em>
+                {% else %}
+                    <em class="paginacion"><a href="?page={{ i }}">{{ i }}</a></em>
+                {% endif %}
+                {% endfor %}
+
+                <!--Если есть следующая страница - то ссылка "вперед"-->
+                {% if  page_obj.has_next %}
+                  <a href="?page={{ page_obj.next_page_number }}"><img src="{{STATIC_URL}}img/next.png" class="arrow"></a>
+                {% else %}
+                    <img src="{{STATIC_URL}}img/next.png" class="arrow">
+            {% endif %}
+                </div>
+          {% endif %}
     {% endautoescape off %}
 {% endblock %}
-

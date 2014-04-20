@@ -90,7 +90,7 @@ ul.navlist li a {
     display: block;
     font-size: 12px;
     color: #2a2727;
-    text-shadow: 1px 1px 0px white;
+    text-shadow: 0px 0px 0px white;
     -border: 5px solid #ccc;
     -webkit-transition: margin 0.1s ease-out;
     -moz-transition: margin 0.1s ease-out;
@@ -98,7 +98,7 @@ ul.navlist li a {
 }
 
 ul.navlist li a:hover {
-    text-shadow: 1px 1px 0px #b3cfe2;
+    text-shadow: 0px 0px 0px #b3cfe2;
     margin-top: 2px;
 }
 
@@ -165,6 +165,7 @@ section h2 {
     position: absolute;
     right: 0;
     bottom: 0;
+    margin-bottom: 22px;
 }
 
 .cat {
@@ -183,7 +184,20 @@ section a {
 }
 
 hr {
+    border: none;
     clear: both;
+    color:  #9a9a9a;
+    background-color:  #9a9a9a;
+    height: 1px;
+
+}
+
+hr.II {
+    margin-top: -6px;
+    border: none;
+    color:  #eeeeee;
+    background-color:  #eeeeee;
+    height: 1px;
 }
 
 .article a {
@@ -342,4 +356,37 @@ div#contentla p, #contentcat p {
 
 .article p {
     margin-right: 10px;
+}
+
+.paginacion, .current {
+    padding: 5px 10px 5px 8px;
+    text-align: center;
+}
+
+.current {
+    background-image: url("../img/sbbg.png");
+    border: 1px solid #808080;
+}
+
+.paginacion:hover {
+   /* background-color: #ffffff; */
+}
+
+.paginacion a, .current a {
+    color: #262626;
+    text-decoration: none;
+
+}
+
+.paginacion {
+    border: 1px solid #808080;
+}
+
+.arrow {
+    margin-bottom: -4px;
+}
+
+.gggg {
+    display: table;
+    margin: 20px auto;
 }

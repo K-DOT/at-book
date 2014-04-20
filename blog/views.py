@@ -14,10 +14,12 @@ def index(request):
     return render_to_response('blog/index.html')
 
 class PostsListView(ListView): # представление в виде списка
-    model = Post                   # модель для представления 
+    model = Post
+    paginate_by = 5                 # модель для представления
 
 class PostDetailView(DetailView): # детализированное представление модели
     model = Post
+
 
 def category(request, id): # получаем аргумент id
     # делаем выборку выбранной категории
