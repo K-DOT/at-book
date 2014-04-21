@@ -169,8 +169,10 @@ section h2 {
 }
 
 .cat {
-    margin-bottom: 10px; ;
+    margin-bottom: 10px;
     margin-top: -10px;
+    margin-left: 0px!important;
+
 }
 
 section a {
@@ -354,13 +356,23 @@ div#contentla p, #contentcat p {
     margin-bottom: 15px;
 }
 
-.article p {
-    margin-right: 10px;
+.article p, .articles_in_cat {
+    margin-left: 15px;
+
+}
+
+.articles_in_cat a {
+    color: #262626;
+}
+
+.articles_in_cat a:hover {
+    text-decoration: underline;
 }
 
 .paginacion, .current {
     padding: 5px 10px 5px 8px;
     text-align: center;
+    margin: 0px 1px 1px;
 }
 
 .current {

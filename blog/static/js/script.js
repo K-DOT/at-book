@@ -1,5 +1,5 @@
 window.onload = function() {
-  setTimeout(function() {
+  setInterval(function() {
       var mainDivs = document.getElementsByClassName("height");
       var maxHeight = 0;
       for (var i = 0; i < mainDivs.length; ++i) {
@@ -8,7 +8,8 @@ window.onload = function() {
         }
       }
       for (var i = 0; i < mainDivs.length; ++i) {
-        mainDivs[i].style.height = maxHeight + "px";
+        mainDivs[i].style.minHeight = maxHeight + "px";
       }
     }, 1000);
+
 }

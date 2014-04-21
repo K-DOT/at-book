@@ -19,8 +19,8 @@ class Post(models.Model):
           verbose_name = u"Запись"
           verbose_name_plural = u"Записи"
           ordering = ['-datetime',]
-    title = models.CharField(max_length=255, verbose_name="Название")  # заголовок поста
-    image = models.ImageField(upload_to='img', blank=True, verbose_name="Изображение")
+    title = models.CharField(max_length=255, verbose_name=u"Название")  # заголовок поста
+    image = models.ImageField(upload_to='img', blank=True, verbose_name=u"Изображение")
 
     def delete(self, using=None):
         try:
@@ -30,9 +30,9 @@ class Post(models.Model):
             pass
         super(Post, self).delete()
 
-    datetime = models.DateTimeField(verbose_name="Дата и время")
-    content = tinymce_models.HTMLField(verbose_name="Контент")  # текст поста
-    category = models.ForeignKey(Category, verbose_name="Категория")
+    datetime = models.DateTimeField(verbose_name=u"Дата и время")
+    content = tinymce_models.HTMLField(verbose_name=u"Контент")  # текст поста
+    category = models.ForeignKey(Category, verbose_name=u"Категория")
 
     def __unicode__(self):
         return self.title
