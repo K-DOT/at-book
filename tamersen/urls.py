@@ -14,4 +14,5 @@ urlpatterns = patterns('',
         {'document_root':'/home/ruben/projects/env/bin/tamersen/tamersen/media'}),
     url(r'^how-to-buy/$', 'blog.views.htb'),
     url(r'^favicon\.ico$', RedirectView.as_view(url='/static/img/favicon.ico')),
+    url(r'^category/(?P<id>\d+)$', 'blog.views.category'),
 )

@@ -8,10 +8,10 @@ class Post(models.Model):
           verbose_name = u"Книга"
           verbose_name_plural = u"Книги"
           ordering = ['-datetime',]
-    title = models.CharField(max_length=255) # заголовок поста
-    image = models.ImageField(upload_to='img', blank=True, null=True)
-    datetime = models.DateTimeField()
-    content = tinymce_models.HTMLField() # текст поста
+    title = models.CharField(max_length=255, verbose_name="Название") # заголовок поста
+    image = models.ImageField(upload_to='img', blank=True, null=True, verbose_name="Изображение")
+    datetime = models.DateTimeField(verbose_name="Дата и время")
+    content = tinymce_models.HTMLField(verbose_name="Контент") # текст поста
 
     def __unicode__(self):
         return self.title
