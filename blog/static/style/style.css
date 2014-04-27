@@ -402,3 +402,8 @@ div#contentla p, #contentcat p {
     display: table;
     margin: 20px auto;
 }
+
+iframe {
+    margin-bottom: 10px;
+}
+

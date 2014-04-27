@@ -10,6 +10,7 @@ class Post(models.Model):
           ordering = ['-datetime',]
     title = models.CharField(max_length=255, verbose_name=u"Название") # заголовок поста
     image = models.ImageField(upload_to='img', blank=True, null=True, verbose_name=u"Изображение")
+    file = models.FileField(upload_to='demo_books', blank=True, null=True, verbose_name=u"Демонстрационный файл")
     datetime = models.DateTimeField(verbose_name=u"Дата и время")
     content = tinymce_models.HTMLField(verbose_name=u"Контент") # текст поста
 

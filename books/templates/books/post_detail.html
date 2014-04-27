@@ -7,6 +7,9 @@
         <img src="{{MEDIA_URL}}{{ post.image }}" id="index2">
     {% endif %}
     <p>{{ post.content }}</p>
+    {% if post.file %}
+        <a href="{{MEDIA_URL}}{{ post.file }}">Демонстрационный файл</a>
+    {% endif %}
     <div class="spacer"></div>
     <p id="dt">{{ post.datetime }}</p>
     </div>
