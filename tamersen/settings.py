@@ -53,6 +53,13 @@ MIDDLEWARE_CLASSES = (
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 )
 
+TEMPLATE_LOADERS = (
+    'django.template.loaders.filesystem.Loader',
+    'django.template.loaders.app_directories.Loader',
+)
+
+
+
 ROOT_URLCONF = 'tamersen.urls'
 
 WSGI_APPLICATION = 'tamersen.wsgi.application'

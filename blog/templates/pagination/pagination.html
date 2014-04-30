@@ -1,0 +1,27 @@
+{% if is_paginated %}
+    {% load staticfiles %}
+{% load i18n %}
+<div class="gggg">
+    {% if page_obj.has_previous %}
+        <a href="?page={{ page_obj.previous_page_number }}{{ getvars }}{{ hashtag }}" class="prev"><img src="{% static "img/prev.png" %}" class="arrow"></a>
+    {% else %}
+        <img src="{% static "img/prev.png" %}" class="arrow">
+    {% endif %}
+    {% for page in pages %}
+        {% if page %}
+            {% ifequal page page_obj.number %}
+                <em class="current">{{ page }}</em>
+            {% else %}
+                <em class="pagination"><a href="?page={{ page }}{{ getvars }}{{ hashtag }}" class="page">{{ page }}</a></em>
+            {% endifequal %}
+        {% else %}
+            ...
+        {% endif %}
+    {% endfor %}
+    {% if page_obj.has_next %}
+        <a href="?page={{ page_obj.next_page_number }}{{ getvars }}{{ hashtag }}" class="next"><img src="{% static "img/next.png" %}" class="arrow"></a>
+    {% else %}
+        <span class="disabled next"><img src="{% static "img/next.png" %}" class="arrow"></span>
+    {% endif %}
+</div>
+{% endif %}

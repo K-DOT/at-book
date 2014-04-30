@@ -15,7 +15,7 @@ def index(request):
 
 class PostsListView(ListView): # представление в виде списка
     model = Post
-    paginate_by = 5                 # модель для представления
+    paginate_by = 10                # модель для представления
 
 class PostDetailView(DetailView): # детализированное представление модели
     model = Post
